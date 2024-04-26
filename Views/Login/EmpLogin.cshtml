@@ -1,0 +1,34 @@
+﻿@model studentCRUD26042024.Models.LoginModel
+
+@{
+	ViewBag.Title = "EmpLogin";
+}
+
+@{ 
+	if (ViewBag.msg != null)
+	{
+		<h4 style="color:red">@ViewBag.msg</h4>
+	}
+ }
+<h2>Employee Login</h2>
+@using (Html.BeginForm("emplogin","login",FormMethod.Post))
+{
+	<table>
+	
+		<tr>
+			<td>@Html.DisplayNameFor(x=>x.userid)</td>
+			<td>@Html.EditorFor(x=>x.userid)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@Html.DisplayNameFor(x=>x.password)</td>
+			<td>@Html.EditorFor(x=>x.password)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><input type="submit"value="submit" /></td>
+			<td><input type="reset" value="Reset" /></td>
+			<td>@Html.ActionLink("Sign Up","signUp")</td>
+		</tr>
+	</table>
+}

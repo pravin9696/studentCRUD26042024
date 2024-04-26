@@ -1,0 +1,37 @@
+﻿@model studentCRUD26042024.Models.LoginModel
+
+@{
+	ViewBag.Title = "signup";
+}
+@{
+	if (ViewBag.msg != null)
+	{
+		<h4 style="color:red">@ViewBag.msg</h4>
+	}
+}
+<h2>signup</h2>
+@using (Html.BeginForm("signup", "login", FormMethod.Post))
+{
+	<table>
+
+		<tr>
+			<td>@Html.DisplayNameFor(x => x.userid)</td>
+			<td>@Html.EditorFor(x => x.userid)</td>
+			<td>
+				@Html.ValidationMessageFor(x=>x.userid)
+			</td>
+		</tr>
+		<tr>
+			<td>@Html.DisplayNameFor(x => x.password)</td>
+			<td>@Html.EditorFor(x => x.password)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="submit" /></td>
+			<td><input type="reset" value="Reset" /></td>
+			<td>@Html.ActionLink("login", "EmpLogin")</td>
+		</tr>
+	</table>
+}
+
+
